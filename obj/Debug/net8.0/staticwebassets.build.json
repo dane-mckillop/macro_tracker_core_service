@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "K+pgE+cO47XFqDssS/lfsRxYN6EXDdd+Giqvdwu0CMo=",
+  "Source": "macro_tracker_core_service",
+  "BasePath": "_content/macro_tracker_core_service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

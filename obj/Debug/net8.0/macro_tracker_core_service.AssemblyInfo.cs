@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("macro_tracker_core_service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c63a65a98feb04c96ab9aa8cda6666f78a55529d")]
 [assembly: System.Reflection.AssemblyProductAttribute("macro_tracker_core_service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("macro_tracker_core_service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
