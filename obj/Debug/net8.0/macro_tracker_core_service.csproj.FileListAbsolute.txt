@@ -170,3 +170,4 @@ C:\Users\danem\source\repos\macro_tracker_core_service\obj\Debug\net8.0\refint\m
 C:\Users\danem\source\repos\macro_tracker_core_service\obj\Debug\net8.0\macro_tracker_core_service.pdb
 C:\Users\danem\source\repos\macro_tracker_core_service\obj\Debug\net8.0\macro_tracker_core_service.genruntimeconfig.cache
 C:\Users\danem\source\repos\macro_tracker_core_service\obj\Debug\net8.0\ref\macro_tracker_core_service.dll
+C:\Users\danem\source\repos\macro_tracker_core_service\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

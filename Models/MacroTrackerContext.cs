@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace FoodApi.Models
+namespace macro_tracker_core_service.Models
 {
     public class MacroTrackerContext : DbContext
     {

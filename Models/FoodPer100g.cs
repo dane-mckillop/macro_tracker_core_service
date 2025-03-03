@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FoodApi.Models
+namespace macro_tracker_core_service.Models
 {
     public class FoodPer100g
     {
