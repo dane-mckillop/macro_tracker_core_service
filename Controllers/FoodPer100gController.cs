@@ -37,5 +37,22 @@ namespace macro_tracker_core_service.Controllers
 
             return food;
         }
+
+        // POST: api/Foods
+        [HttpPost]
+        public async Task<ActionResult<FoodPer100g>> CreateFood(FoodPer100g food)
+        {
+            // Basic input validation
+            if (food == null)
+            {
+                return BadRequest("Food item cannot be null");
+            }
+
+            //Insert food item, exceptions handled by middleware
+            _context.FoodsPer100g.Add(food);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetFoodById), new { id = food.FoodId }, food);
+        }
     }
 }

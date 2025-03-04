@@ -1,10 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace macro_tracker_core_service.Models
 {
+    [Index(nameof(Name), IsUnique = true)]
     public class FoodPer100g
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FoodId { get; set; }
         [Required]
         [StringLength(100)]

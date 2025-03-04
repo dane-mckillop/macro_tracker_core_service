@@ -21,6 +21,32 @@
   },
   {
     "ContainingType": "macro_tracker_core_service.Controllers.FoodsController",
+    "Method": "CreateFood",
+    "RelativePath": "api/Foods",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "food",
+        "Type": "macro_tracker_core_service.Models.FoodPer100g",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "macro_tracker_core_service.Models.FoodPer100g",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "macro_tracker_core_service.Controllers.FoodsController",
     "Method": "GetFoodById",
     "RelativePath": "api/Foods/{id}",
     "HttpMethod": "GET",
