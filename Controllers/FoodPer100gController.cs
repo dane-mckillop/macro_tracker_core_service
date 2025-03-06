@@ -31,24 +31,47 @@ namespace macro_tracker_core_service.Controllers
         }
 
         // GET: api/Foods/5
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<ActionResult<FoodPer100g>> GetFoodById(int id)
         {
             var food = await _context.FoodsPer100g.FindAsync(id);
-
             if (food == null)
             {
                 return NotFound();
             }
-
             return food;
+        }
+
+        // GET: api/Foods/name/Pork
+        [HttpGet("name/{name}")]
+        public async Task<ActionResult<FoodPer100g>> GetFoodByName(string name)
+        {
+            var food = await _context.FoodsPer100g.FirstOrDefaultAsync(f => f.Name == name);
+            if (food == null)
+            {
+                return NotFound();
+            }
+            return food;
+        }
+
+        // GET: api/Foods/substring/Pork
+        [HttpGet("substring/{name}")]
+        public async Task<ActionResult<FoodPer100g>> GetFoodBySubstring(string name)
+        {
+            var foods = await _context.FoodsPer100g
+                .Where(f => f.Name.Contains(name))
+                .ToListAsync();
+            if (foods == null || !foods.Any())
+            {
+                return NotFound();
+            }
+            return Ok(foods);
         }
 
         // POST: api/Foods
         [HttpPost]
         public async Task<ActionResult<FoodPer100g>> CreateFood(FoodPer100g food)
         {
-            // Basic input validation
             if (food == null)
             {
                 return BadRequest("Food item cannot be null");
@@ -62,18 +85,18 @@ namespace macro_tracker_core_service.Controllers
         }
 
         // PUT: api/Foods/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateFood(int id, FoodPer100g food)
+        [HttpPut]
+        public async Task<IActionResult> UpdateFood(FoodPer100g food)
         {
-            if (id != food.FoodId)
+            if (food == null)
             {
-                return BadRequest("Id mismatch between route and food object");
+                return BadRequest("Food item cannot be null");
             }
 
-            var existingFood = await _context.FoodsPer100g.FindAsync(id);
+            var existingFood = await _context.FoodsPer100g.FindAsync(food.FoodId);
             if (existingFood == null)
             {
-                return NotFound($"Food item with ID {id} was not found");
+                return NotFound($"Food item with ID {food.FoodId} was not found");
             }
 
             _context.Entry(existingFood).CurrentValues.SetValues(food);
@@ -81,17 +104,17 @@ namespace macro_tracker_core_service.Controllers
             try
             {
                 await _context.SaveChangesAsync();
-                return NoContent(); 
+                return NoContent();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!FoodExists(id))
+                if (!FoodExists(food.FoodId))
                 {
-                    return NotFound($"Food item with ID {id} no longer exists");
+                    return NotFound($"Food item with ID {food.FoodId} no longer exists");
                 }
                 else
                 {
-                    throw; 
+                    throw;
                 }
             }
         }
