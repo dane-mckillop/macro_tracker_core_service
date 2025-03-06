@@ -70,5 +70,26 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "macro_tracker_core_service.Controllers.FoodsController",
+    "Method": "UpdateFood",
+    "RelativePath": "api/Foods/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "food",
+        "Type": "macro_tracker_core_service.Models.FoodPer100g",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
