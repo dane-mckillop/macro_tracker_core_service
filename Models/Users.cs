@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 namespace macro_tracker_core_service.Models
 {
     [Index(nameof(Username), IsUnique = true)]
-    public class User
+    public class Users
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
